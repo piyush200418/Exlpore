@@ -41,35 +41,43 @@ connection.connect((err) => {
   }
   console.log('Connected to database.');
 });
-// app.post('/api/create', (req, res) => {
-//     const { name, email } = req.body;
-//     const sql = 'INSERT INTO users (name, email) VALUES (?, ?)';
-//     connection.query(sql, [name, email], (err, result) => {
-//       if (err) {
-//         console.error('Error inserting data:', err);
-//         res.status(500).json({ error: 'Error inserting data' });
-//         return;
-//       }
-//       console.log('Data inserted successfully.');
-//       res.status(200).json({ message: 'Data inserted successfully' });
-//     });
-//   });
-
 // API endpoint to add data
 app.post('/api/addData', (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, mobile, package, budget } = req.body;
 
     if (!name || !email || !password) {
-        return res.status(400).json({ error: 'Name, email, and password are required.' });
+        return res.status(400).json({ error: 'Details are required to book a Package.' });
     }
 
     // Insert data into the database
-    connection.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password], (error, results) => {
+    connection.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?, ?, ?, ?)', [name, email, password,  mobile, package, budget], (error, results) => {
         if (error) {
             console.error('Error adding data:', error);
             return res.status(500).json({ error: 'An error occurred while adding data.' });
         }
 
         res.json({ success: true });
+    });
+});
+
+// API endpoint to check if data exists
+app.post('/api/checkData', (req, res) => {
+    const {name, email, password, mobile, package, budget } = req.body;
+
+    // Query the database to check if data exists
+    pool.query('SELECT * FROM users WHERE name = ? AND email = ? AND password = ? AND mobile = ? AND package = ? AND budget = ?', [name, email, password, mobile, package, budget], (error, results) => {
+        if (error) {
+            console.error('Error checking data:', error);
+            return res.status(500).json({ error: 'An error occurred while checking data.' });
+        }
+
+        // Check if any matching data was found
+        if (results.length > 0) {
+            // Data exists
+            res.json({ exists: true });
+        } else {
+            // Data does not exist
+            res.json({ exists: false });
+        }
     });
 });
