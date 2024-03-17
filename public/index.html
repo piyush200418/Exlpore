@@ -545,12 +545,29 @@
   <script>
       document.getElementById('data-form').addEventListener('submit', async function(event) {
           event.preventDefault(); // Prevent form submission
-
+ 
           const formData = new FormData(this);
           const data = Object.fromEntries(formData.entries());
-
           try {
-              const response = await fetch('/api/addData', {
+            const response = await fetch('/api/checkData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            if (result.exists) {
+                // Data exists
+                alert('Data already exists in the database.');
+            } else {
+                // Data does not exist
+                alert('Data does not exist in the database. Proceed with submission.');
+                // Add code to submit the form or perform other actions
+                try {
+                  const response = await fetch('/api/addData', {
                   method: 'POST',
                   headers: {
                       'Content-Type': 'application/json'
@@ -568,38 +585,19 @@
               console.error('Error adding data:', error);
               alert('An error occurred while adding data. Please try again.');
           }
-      });
-  </script>
-  <script>
-    document.getElementById('data-form').addEventListener('submit', async function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch('/api/addData', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                alert('Data added successfully!');
-                // Clear form fields if needed
-            } else {
-                alert('Failed to add data. Please try again.');
+  
             }
-        } catch (error) {
-            console.error('Error adding data:', error);
-            alert('An error occurred while adding data. Please try again.');
+        } else {
+            // Handle error response from the server
+            alert('Failed to check data. Please try again.');
         }
-    });
-</script>
-
-
+    } catch (error) {
+        console.error('Error checking data:', error);
+        alert('An error occurred while checking data. Please try again.');
+    }
+      });
+      
+  </script>
   <script>
       // Fetch data from backend API
       fetch('/api/data')

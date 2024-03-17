@@ -45,12 +45,12 @@ connection.connect((err) => {
 app.post('/api/addData', (req, res) => {
     const { name, email, password, mobile, package, budget } = req.body;
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !mobile || !package || !budget) {
         return res.status(400).json({ error: 'Details are required to book a Package.' });
     }
 
     // Insert data into the database
-    connection.query('INSERT INTO users (name, email, password) VALUES (?, ?, ?, ?, ?, ?)', [name, email, password,  mobile, package, budget], (error, results) => {
+    connection.query('INSERT INTO users (name, email, password, mobile, package, budget) VALUES (?, ?, ?, ?, ?, ?)', [name, email, password,  mobile, package, budget], (error, results) => {
         if (error) {
             console.error('Error adding data:', error);
             return res.status(500).json({ error: 'An error occurred while adding data.' });
@@ -65,7 +65,7 @@ app.post('/api/checkData', (req, res) => {
     const {name, email, password, mobile, package, budget } = req.body;
 
     // Query the database to check if data exists
-    pool.query('SELECT * FROM users WHERE name = ? AND email = ? AND password = ? AND mobile = ? AND package = ? AND budget = ?', [name, email, password, mobile, package, budget], (error, results) => {
+    connection.query('SELECT * FROM users WHERE name = ? AND email = ? AND password = ? AND mobile = ? AND package = ? AND budget = ?', [name, email, password, mobile, package, budget], (error, results) => {
         if (error) {
             console.error('Error checking data:', error);
             return res.status(500).json({ error: 'An error occurred while checking data.' });
