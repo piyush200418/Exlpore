@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+    <script src="signup.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" href="https://tourismbharat.com/wp-content/uploads/2023/11/Color-logo-no-background.png" type="image">
+    <a href="#" class="logo">
+        <img src="https://tourismbharat.com/wp-content/uploads/2023/11/Color-logo-no-background.png" alt="Explore Bharat"style="height:80px">
+      </a>
+</head>
+<body>
+    
+    <form id="loginform" onsubmit="return login()">
+        <!-- <ion-icon name="close-circle-outline" onclick="return c()"></ion-icon> -->
+        <div class="inputs">
+        <h2 style="color:black">LOG IN</h2>
+        <ion-icon name="person"></ion-icon>
+            <br><input type="text" name="Email" maxlength="40" placeholder="Email" onclick="focus()"><br>
+            
+            <br><input type="password" name="Set_Pass" placeholder="Password"><br><br>
+            <span id="span" style="font-size: large;font-weight: 700;font-size: 20px;"></span><br><br>
+        <!-- <ion-icon name="log-in" style="position:absolute;top:535px;right:160px;"></ion-icon> -->
+        <!-- <a href="book.html"><input type="submit" id="login" value="Log In"> </a> -->
+        <input href="book.html" type="submit" id="log-in" value="Submit"> 
+        </div>     
+        <h5>Don't have an account?<a href="signup.html" class="log"> Sign Up</a></h5>
+        </form>
+        <script>
+            document.getElementById('loginform').addEventListener('submit', async function(event) {
+                event.preventDefault(); // Prevent form submission
+          
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                try {
+                  const response = await fetch('/login', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+              });
+          
+              if (response.ok) {
+                        alert('Log In Successfull!');
+                        window.location.href = '/book.html';
+              } else
+                    alert("Email or Password is Invalid!");
+                    
+             } catch (error) {
+                    // console.error('Error adding data:', error);
+                    //alert('An error occurred while adding data. Please try again.');
+                }
+            });
+            
+          </script>
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>

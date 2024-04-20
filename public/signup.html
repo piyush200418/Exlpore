@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" href="https://tourismbharat.com/wp-content/uploads/2023/11/Color-logo-no-background.png" type="image">
+    <a href="#" class="logo">
+        <img src="https://tourismbharat.com/wp-content/uploads/2023/11/Color-logo-no-background.png" alt="Explore Bharat"style="height:80px">
+      </a>
+</head>
+<body>
+    
+    
+    <form id="signupform">
+        
+        <div class="inputs">
+        <h2 style="color:black">SIGN UP</h2>
+        <ion-icon name="person"></ion-icon>
+        <br><input type="text" name="Name"  maxlength="40" placeholder="Name" onclick="focus()"><br>
+        <ion-icon name="mail"></ion-icon>
+        <br><input type="email" name="Email" placeholder="Email"><br>
+        <ion-icon name="call"></ion-icon>
+        <br><input type="text" name="Contact_No" placeholder="Phone Number" maxlength="10" ><br>
+        
+        <br><input type="password" name="Set_Pass" placeholder="Set password"> <br>
+        
+        <br><input type="password" name="C_Pass" placeholder="Confirm password"><br><br>
+        <span id="span" style="font-size: large;font-weight: 700;font-size: 20px;"></span><br>
+        
+        <input type="submit" id="signup" name="signup" value="Sign up"> 
+        </div>     
+        <h5>Already have an account?<a href="login.html" class="log"> Log In</a></h5>
+        </form>
+        <script>
+            document.getElementById('signupform').addEventListener('submit', async function(event) {
+                event.preventDefault(); // Prevent form submission
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+        
+                try {
+                    const response = await fetch('/signup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+        
+                    const responseData = await response.json();
+        
+                    if (response.ok) {
+                        alert('Sign Up Successful, now click on Log In to Book your Package.');
+                         document.getElementById('signupform').reset(); // Reset the form
+                    } else {
+                        // Display specific error message from server response
+                        if (responseData && responseData.error) {
+                            alert(responseData.error);
+                        } else {
+                            alert('Invalid Credentials!');
+                        }
+                    }
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('An error occurred while communicating with the server. Please try again.');
+                }
+            });
+        </script>
+        
+        
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+
+    <link rel="stylesheet" href="book.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Bharat</title>
+    <link rel="icon" href="https://tourismbharat.com/wp-content/uploads/2023/11/Color-logo-no-background.png" type="image">
+    <a href="#" class="logo">
+        <img src="https://tourismbharat.com/wp-content/uploads/2023/11/Color-logo-no-background.png" alt="Explore Bharat"style="height:80px">
+      </a>
+</head>
+<body>
+        
+        <form id="BookingForm" action="/submit" method="post">  
+        <div class="inputs">
+        <div class="submitDiv">
+        <h2 style="color:black">BOOKING DETAILS</h2></div>
+        <label for="T_Name">Traveller's Name</label><br>
+        <input type="text" id="T_Name" name="T_Name" maxlength="400" placeholder="Enter Traveller's Name" onclick="focus()" required><br><br>
+        
+        <label for="D_City">Departure City:</label><br>
+        <input type="text" id="D_City" name="D_City" maxlength="400" placeholder="Enter your Departure City" onclick="focus()" required><br><br>
+   
+
+
+        <label for="Package">Package:</label>
+        <select id="Package" name="Package" required style="border-radius: 13px;">
+            <option value="">Select Package</option>
+            <option value="GOLDEN TRIANGLE TOUR (DELHI - AGRA - JAIPUR)">GOLDEN TRIANGLE TOUR (DELHI - AGRA - JAIPUR)</option>
+            <option value="HIMALAYAN ADVENTURE (SHIMLA - MANALI - DHARAMSHALA)">HIMALAYAN ADVENTURE (SHIMLA - MANALI - DHARAMSHALA)</option>
+            <option value="GOA BEACH HOLIDAY">GOA BEACH HOLIDAY</option>
+            <option value="ANDAMAN'S WEEKEND VACATION">ANDAMAN'S WEEKEND VACATION</option>
+            <option value="KERALA BACKWATERS AND BEACHES TOUR">KERALA BACKWATERS AND BEACHES TOUR</option>
+            <option value="RAJASTHAN ROYAL HERITAGE TOUR (UDAIPUR - JODHPUR - JAISALMER)">RAJASTHAN ROYAL HERITAGE TOUR (UDAIPUR - JODHPUR - JAISALMER)</option>
+            <option value="CULTURAL SOUTH INDIA (CHENNAI - MADURAI - MYSORE)">CULTURAL SOUTH INDIA (CHENNAI - MADURAI - MYSORE)</option>
+            <option value="VARANASI AND KHAJURAHO TEMPLES TOUR">VARANASI AND KHAJURAHO TEMPLES TOUR</option>
+            <option value="WESTERN GHATS NATURE TOUR (COORG - OOTY - MUNNAR) TOUR">WESTERN GHATS NATURE TOUR (COORG - OOTY - MUNNAR) TOUR</option>
+            <option value="TAJ MAHAL AND TIGER SAFARI (DELHI - AGRA - RANTHAMBORE)">TAJ MAHAL AND TIGER SAFARI (DELHI - AGRA - RANTHAMBORE)</option>
+            <option value="SPIRITUAL NORTH INDIA (HARIDWAR - RISHIKESH - AMRITSAR)">SPIRITUAL NORTH INDIA (HARIDWAR - RISHIKESH - AMRITSAR)</option>
+        </select>
+        
+        <label for="Flight">Flight Required:</label>
+        <select id="Flight" name="Flight" required placeholder="Select(YES/NO)" style="border-radius: 13px;" style="border-radius: 13px;">
+            <option value="">Select(YES/NO)</option>
+            <option value="YES">YES</option>
+            <option value="NO">NO</option>
+        </select>
+       
+        
+
+        <label for="Date">Date of Departure:</label><br>
+        <input type="date" id="Date" name="Date" required><br><br>
+        <label for="Budget">Enter your Budget in Rupees:</label>
+        <input type="number" id="Budget" name="Budget" placeholder="Example: 10000" maxlength="15" min="0" style="border-radius: 13px;" required> 
+
+        <br><br>
+        <label for="Contact_No">Contact No.</label><br>
+        <input type="text" id="Contact_No" name="Contact_No" maxlength="400" placeholder="Enter Contact No." onclick="focus()" required><br><br>
+        <div class="submitDiv">
+        <input type="submit" id="signup" value="SUBMIT" style="text-align: center;"></div>
+        <br><br>
+        </div>
+       
+        </form>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+  document.getElementById('BookingForm').addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+      try {
+        const response = await fetch('/Booking', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+              alert('Booking Details saved successfully! Our Team will reach out to you within 24hrs.');
+              document.getElementById('BookingForm').reset(); // Reset the form
+    } else
+          alert("Couldn't add Booking Details Please try again.");
+          
+   } catch (error) {
+          console.error('Error adding data:', error);
+          alert('An error occurred while adding data. Please try again.');
+      }
+  });
+  
+</script>
+    
+</body>
+</html>

@@ -98,7 +98,7 @@
     font-size: var(--fs-5);
     border-radius: 100px;
     padding: var(--padding, 8px 18px);
-    border: var(--border-width, 1px) solid transparent;
+    border: var(--border-width, 2px) solid transparent;
     transition: var(--transition);
   }
  
@@ -175,7 +175,7 @@
     left: 0;
     width: 100%;
     transition: var(--transition);
-    /* border-bottom: 1px solid hsla(0, 0%, 100%, 0.5); */
+    /* border-bottom: 1px solid hsla(0, 0%, 100%, 0.1); */
     padding-block: 15px;
     z-index: 1;
   }
@@ -321,7 +321,6 @@
  
   .hero {
     background-image: url("https://images.pexels.com/photos/17501049/pexels-photo-17501049/free-photo-of-hill-station-in-himalayas.jpeg?auto=compress&cs=tinysrgb&w=800");
-    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -329,17 +328,17 @@
     background-blend-mode: overlay;
     display: grid;
     place-items: center;
-    min-height: 600px;
+    min-height: 150px;
     text-align: center;
     padding-top: 125px;
   }
  
-  .hero-title { margin-bottom: 20px; }
+  .hero-title { margin-bottom: 2px; }
  
   .hero-text {
     color: var(--white);
     font-size: var(--fs-5);
-    margin-bottom: 40px;
+    margin-bottom: 4px;
   }
  
   .btn-group {
@@ -473,10 +472,10 @@
   .card-meta-list {
     background: var(--white);
     max-width: max-content;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     padding: 8px;
     box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
     border-radius: 50px;
@@ -496,10 +495,19 @@
  
   .meta-box {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     gap: 5px;
-    padding-inline: 9px;
+    padding-inline: 5px;
+    color: var(--black-coral);
+    font-size: var(--fs-8);
+  }
+  .meta-list {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    /* gap: 5px; */
+    padding-inline: 5px;
     color: var(--black-coral);
     font-size: var(--fs-8);
   }
@@ -602,8 +610,7 @@
     line-height: 1.7;
   }
  
-  .footer-contact { 
-    margin-bottom: 30px; }
+  .footer-contact { margin-bottom: 30px; }
  
   .contact-title {
     position: relative;
@@ -779,8 +786,8 @@
     }
   /* hero */
     .hero {
-      min-height: 800px;
-      padding-top: 85px;
+      height: 10px;
+      padding-top: 5px;
     }
  
     .hero-text { --fs-5: 15px; }
@@ -1026,8 +1033,8 @@
     .cta .section-title { max-width: 25ch; }
   /* footer */
     .footer-top .container {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
     }
  
     .footer-form { grid-column: unset; }

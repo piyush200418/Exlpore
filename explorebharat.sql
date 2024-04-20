@@ -1,11 +1,26 @@
 CREATE DATABASE explorebharat;
 USE explorebharat;
-create table users(
-name char(50),
-email char(100),
-password char(40)
-mobile BIGINT,
-package varchar(100),
-budget int
+create table Booking_Details(
+T_Name varchar(1000),
+D_City varchar(100),
+Package varchar(100),
+Flight char(3),
+Date char(10),
+Contact_No BIGINT,
+Budget bigint
 );
-select *from users;
+ 
+create table Log_In(
+username varchar(100),
+password varchar(100),
+Name varchar(100),
+Email varchar(100),
+Phone char(10));
+
+
+
+select * from Booking_Details;
+
+
+
+
