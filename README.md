@@ -11,10 +11,9 @@ Explore Bharat is a web application designed to help users discover, explore, an
 - [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Folder Structure](#folder-structure)
+- [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ---
@@ -100,7 +99,7 @@ You can try the application by opening `https://explorebharat.vercel.app/` in yo
 
 ---
 
-## Folder Structure
+## Project Structure
 
 The project has the following folder structure:
 
@@ -140,7 +139,7 @@ Explore-Bharat/
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
-- **Database:** MongoDB
+- **Database:** MySQL
 
 ---
 
