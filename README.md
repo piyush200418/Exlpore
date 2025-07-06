@@ -55,19 +55,19 @@ Below are some interface screenshots from the application:
 
 ## Features
 
-- 🌏 **Browse Destinations:** Discover popular and unexplored tourist places in India.
-- 📦 **Travel Packages:** View curated travel packages with details and pricing.
-- 🖼️ **Photo Gallery:** Explore photos shared by travelers.
-- 📝 **User Reviews:** Read and share travel experiences.
-- 🔒 **Authentication:** Secure sign-up and log-in for users.
-- 🛒 **Booking System:** Book packages directly from the platform.
-- 📱 **Responsive Design:** Optimized for desktop and mobile devices.
+- **Browse Destinations:** Discover popular and unexplored tourist places in India.
+- **Travel Packages:** View curated travel packages with details and pricing.
+- **Photo Gallery:** Explore photos shared by travelers.
+- **User Reviews:** Read and share travel experiences.
+- **Authentication:** Secure sign-up and log-in for users.
+- **Booking System:** Book packages directly from the platform.
+- **Responsive Design:** Optimized for desktop and mobile devices.
 
 ---
 
 ## Demo
 
-You can try the application by opening `public/index.html` in your browser.
+You can try the application by opening `https://explorebharat.vercel.app/` in your browser.
 
 ---
 
@@ -107,25 +107,40 @@ The project has the following folder structure:
 ```
 Explore-Bharat/
 ├── Interfaces/          # Contains interface screenshots
-├── public/              # Contains static files
-│   ├── index.html
-│   └── ...
-├── src/                 # Contains source code
-│   ├── components/      # Reusable components
-│   ├── pages/          # Page components
-│   ├── App.js           # Main application component
-│   └── index.js         # Entry point
-└── package.json         # Project metadata and dependencies
+├── public/              # Static files (HTML, CSS, JS, images)
+│   ├── index.html       # Main HTML file
+│   ├── book.html        # Booking page
+│   ├── destination.html # Destination details page
+│   ├── login.html       # Login page
+│   ├── package.html     # Packages listing page
+│   ├── signup.html      # Signup page
+│   ├── style1.css       # Main stylesheet
+│   ├── book.css         # Booking page styles
+│   ├── destination.css  # Destination page styles
+│   ├── login.css        # Login page styles
+│   ├── package.css      # Package page styles
+│   ├── signup.css       # Signup page styles
+│   └── script.js        # Main JavaScript file
+├── server.js            # Node.js/Express backend server
+├── explorebharat.sql    # Database
+├── package.json         # Project metadata and dependencies
+└── README.md            
 ```
+
+- **Interfaces/**: UI screenshots and design references.
+- **public/**: All static assets and HTML/CSS/JS files for the frontend.
+- **server.js**: Backend server logic (Node.js/Express).
+- **explorebharat.sql**: Database schema and sample data.
+- **package.json**: Project dependencies and scripts.
+- **README.md**: Project documentation.
 
 ---
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS, JavaScript, React
+- **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
-- **Others:** Git, GitHub, npm
 
 ---
 
