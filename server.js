@@ -2,10 +2,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware to serve static files (your frontend)
+// Middleware to serve static files (frontend)
 app.use(express.static('public'));
 
-// Define routes for your backend API
+// Define routes for backend API
 // Example:
 // Middleware to parse JSON and URL-encoded bodies
 app.use(express.json());
@@ -173,4 +173,3 @@ app.post('/Booking', (req, res) => {
         res.status(200).json('Data saved successfully');
     });
 });
-
