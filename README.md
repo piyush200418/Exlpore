@@ -69,6 +69,8 @@ Below are some interface screenshots from the application:
 
 You can try the application by opening `https://explorebharat.vercel.app/` in your browser.
 
+<!-- Demo update -->
+
 ---
 
 ## Installation
