@@ -157,4 +157,4 @@ Contributions are welcome! Please follow these steps:
 
 ## Contact
 
-Piyush Verma - [Email](piyushverma1882@gmail.com)
+Piyush Verma - [Email](mailto:piyushverma1882@gmail.com)
