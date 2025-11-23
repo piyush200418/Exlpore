@@ -1,8 +1,6 @@
 # Explore Bharat
 
-Explore Bharat is a web application designed to help users discover, explore, and book travel destinations across India. The platform features curated packages, destination highlights, user reviews, and a seamless booking experience. 
-
-<!-- Update -->
+Explore Bharat is a web application designed to help users discover, explore, and book travel destinations across India. The platform features curated packages, destination highlights, user reviews, and a seamless booking experience.
 
 ---
 
@@ -57,7 +55,6 @@ Below are some interface screenshots from the application:
 ## Features
 
 - **Browse Destinations:** Discover popular and unexplored tourist places in India.
-<!-- Feature update -->
 - **Travel Packages:** View curated travel packages with details and pricing.
 - **Photo Gallery:** Explore photos shared by travelers.
 - **User Reviews:** Read and share travel experiences.
