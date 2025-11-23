@@ -75,6 +75,7 @@ You can try the application by opening `https://explorebharat.vercel.app/` in yo
 
 ## Installation
 
+<!-- Installation update -->
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/piyush200418/Exlpore.git
