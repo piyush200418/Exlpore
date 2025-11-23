@@ -56,6 +56,7 @@ Below are some interface screenshots from the application:
 
 - **Browse Destinations:** Discover popular and unexplored tourist places in India.
 - **Travel Packages:** View curated travel packages with details and pricing.
+<!-- Commit 1 -->
 - **Photo Gallery:** Explore photos shared by travelers.
 - **User Reviews:** Read and share travel experiences.
 - **Authentication:** Secure sign-up and log-in for users.
@@ -138,8 +139,10 @@ Explore-Bharat/
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript
+<!-- Commit 3 -->
 - **Backend:** Node.js, Express
 - **Database:** MySQL
+<!-- Commit 5 -->
 
 ---
 
