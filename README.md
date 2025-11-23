@@ -57,6 +57,7 @@ Below are some interface screenshots from the application:
 ## Features
 
 - **Browse Destinations:** Discover popular and unexplored tourist places in India.
+<!-- Feature update -->
 - **Travel Packages:** View curated travel packages with details and pricing.
 - **Photo Gallery:** Explore photos shared by travelers.
 - **User Reviews:** Read and share travel experiences.
