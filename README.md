@@ -101,7 +101,6 @@ You can try the application by opening `https://explorebharat.vercel.app/` in yo
 
 ## Project Structure
 
-<!-- Structure update -->
 The project has the following folder structure:
 
 ```
@@ -146,7 +145,6 @@ Explore-Bharat/
 
 ## Contributing
 
-<!-- Contributing update -->
 Contributions are welcome! Please follow these steps:
 
 1. Fork the repository.
