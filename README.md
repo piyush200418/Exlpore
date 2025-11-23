@@ -56,7 +56,6 @@ Below are some interface screenshots from the application:
 
 - **Browse Destinations:** Discover popular and unexplored tourist places in India.
 - **Travel Packages:** View curated travel packages with details and pricing.
-<!-- Commit 1 -->
 - **Photo Gallery:** Explore photos shared by travelers.
 - **User Reviews:** Read and share travel experiences.
 - **Authentication:** Secure sign-up and log-in for users.
@@ -69,13 +68,10 @@ Below are some interface screenshots from the application:
 
 You can try the application by opening `https://explorebharat.vercel.app/` in your browser.
 
-<!-- Demo update -->
-
 ---
 
 ## Installation
 
-<!-- Installation update -->
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/piyush200418/Exlpore.git
@@ -96,7 +92,6 @@ You can try the application by opening `https://explorebharat.vercel.app/` in yo
 
 ## Usage
 
-<!-- Usage update -->
 - Use the navigation bar to browse different sections of the application.
 - Explore destinations and travel packages.
 - View photos and read reviews from other travelers.
@@ -143,10 +138,8 @@ Explore-Bharat/
 ## Technologies Used
 
 - **Frontend:** HTML, CSS, JavaScript
-<!-- Commit 3 -->
 - **Backend:** Node.js, Express
 - **Database:** MySQL
-<!-- Commit 5 -->
 
 ---
 
