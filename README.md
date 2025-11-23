@@ -101,6 +101,7 @@ You can try the application by opening `https://explorebharat.vercel.app/` in yo
 
 ## Project Structure
 
+<!-- Structure update -->
 The project has the following folder structure:
 
 ```
