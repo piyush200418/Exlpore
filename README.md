@@ -96,6 +96,7 @@ You can try the application by opening `https://explorebharat.vercel.app/` in yo
 
 ## Usage
 
+<!-- Usage update -->
 - Use the navigation bar to browse different sections of the application.
 - Explore destinations and travel packages.
 - View photos and read reviews from other travelers.
