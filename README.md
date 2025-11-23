@@ -157,4 +157,4 @@ Contributions are welcome! Please follow these steps:
 
 ## Contact
 
-Harsh Deep - [LinkedIn](https://www.linkedin.com/in/harshdeep7199/) - [Email](harshdeep7199@gmail.com)
+Piyush Verma - [Email](piyushverma1882@gmail.com)
